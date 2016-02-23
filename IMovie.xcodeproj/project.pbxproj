@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4334EF541C7CAAA2002BBFB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF531C7CAAA2002BBFB2 /* main.m */; };
+		4334EF571C7CAAA2002BBFB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */; };
+		4334EF5A1C7CAAA2002BBFB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF591C7CAAA2002BBFB2 /* ViewController.m */; };
+		4334EF5D1C7CAAA2002BBFB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334EF5B1C7CAAA2002BBFB2 /* Main.storyboard */; };
+		4334EF5F1C7CAAA2002BBFB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4334EF5E1C7CAAA2002BBFB2 /* Assets.xcassets */; };
+		4334EF621C7CAAA2002BBFB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334EF601C7CAAA2002BBFB2 /* LaunchScreen.storyboard */; };
+		4334EF6D1C7CAAA2002BBFB2 /* IMovieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF6C1C7CAAA2002BBFB2 /* IMovieTests.m */; };
+		4334EF781C7CAAA2002BBFB2 /* IMovieUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF771C7CAAA2002BBFB2 /* IMovieUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4334EF691C7CAAA2002BBFB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4334EF471C7CAAA2002BBFB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4334EF4E1C7CAAA2002BBFB2;
+			remoteInfo = IMovie;
+		};
+		4334EF741C7CAAA2002BBFB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4334EF471C7CAAA2002BBFB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4334EF4E1C7CAAA2002BBFB2;
+			remoteInfo = IMovie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4334EF4F1C7CAAA2002BBFB2 /* IMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4334EF531C7CAAA2002BBFB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4334EF551C7CAAA2002BBFB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4334EF581C7CAAA2002BBFB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4334EF591C7CAAA2002BBFB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4334EF5C1C7CAAA2002BBFB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4334EF5E1C7CAAA2002BBFB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4334EF611C7CAAA2002BBFB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4334EF631C7CAAA2002BBFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4334EF681C7CAAA2002BBFB2 /* IMovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4334EF6C1C7CAAA2002BBFB2 /* IMovieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMovieTests.m; sourceTree = "<group>"; };
+		4334EF6E1C7CAAA2002BBFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4334EF731C7CAAA2002BBFB2 /* IMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4334EF771C7CAAA2002BBFB2 /* IMovieUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMovieUITests.m; sourceTree = "<group>"; };
+		4334EF791C7CAAA2002BBFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4334EF4C1C7CAAA2002BBFB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4334EF651C7CAAA2002BBFB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4334EF701C7CAAA2002BBFB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4334EF461C7CAAA2002BBFB2 = {
+			isa = PBXGroup;
+			children = (
+				4334EF511C7CAAA2002BBFB2 /* IMovie */,
+				4334EF6B1C7CAAA2002BBFB2 /* IMovieTests */,
+				4334EF761C7CAAA2002BBFB2 /* IMovieUITests */,
+				4334EF501C7CAAA2002BBFB2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4334EF501C7CAAA2002BBFB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF4F1C7CAAA2002BBFB2 /* IMovie.app */,
+				4334EF681C7CAAA2002BBFB2 /* IMovieTests.xctest */,
+				4334EF731C7CAAA2002BBFB2 /* IMovieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4334EF511C7CAAA2002BBFB2 /* IMovie */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF551C7CAAA2002BBFB2 /* AppDelegate.h */,
+				4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */,
+				4334EF581C7CAAA2002BBFB2 /* ViewController.h */,
+				4334EF591C7CAAA2002BBFB2 /* ViewController.m */,
+				4334EF5B1C7CAAA2002BBFB2 /* Main.storyboard */,
+				4334EF5E1C7CAAA2002BBFB2 /* Assets.xcassets */,
+				4334EF601C7CAAA2002BBFB2 /* LaunchScreen.storyboard */,
+				4334EF631C7CAAA2002BBFB2 /* Info.plist */,
+				4334EF521C7CAAA2002BBFB2 /* Supporting Files */,
+			);
+			path = IMovie;
+			sourceTree = "<group>";
+		};
+		4334EF521C7CAAA2002BBFB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF531C7CAAA2002BBFB2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4334EF6B1C7CAAA2002BBFB2 /* IMovieTests */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF6C1C7CAAA2002BBFB2 /* IMovieTests.m */,
+				4334EF6E1C7CAAA2002BBFB2 /* Info.plist */,
+			);
+			path = IMovieTests;
+			sourceTree = "<group>";
+		};
+		4334EF761C7CAAA2002BBFB2 /* IMovieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF771C7CAAA2002BBFB2 /* IMovieUITests.m */,
+				4334EF791C7CAAA2002BBFB2 /* Info.plist */,
+			);
+			path = IMovieUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4334EF4E1C7CAAA2002BBFB2 /* IMovie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4334EF7C1C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovie" */;
+			buildPhases = (
+				4334EF4B1C7CAAA2002BBFB2 /* Sources */,
+				4334EF4C1C7CAAA2002BBFB2 /* Frameworks */,
+				4334EF4D1C7CAAA2002BBFB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IMovie;
+			productName = IMovie;
+			productReference = 4334EF4F1C7CAAA2002BBFB2 /* IMovie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4334EF671C7CAAA2002BBFB2 /* IMovieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4334EF7F1C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovieTests" */;
+			buildPhases = (
+				4334EF641C7CAAA2002BBFB2 /* Sources */,
+				4334EF651C7CAAA2002BBFB2 /* Frameworks */,
+				4334EF661C7CAAA2002BBFB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4334EF6A1C7CAAA2002BBFB2 /* PBXTargetDependency */,
+			);
+			name = IMovieTests;
+			productName = IMovieTests;
+			productReference = 4334EF681C7CAAA2002BBFB2 /* IMovieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4334EF721C7CAAA2002BBFB2 /* IMovieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4334EF821C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovieUITests" */;
+			buildPhases = (
+				4334EF6F1C7CAAA2002BBFB2 /* Sources */,
+				4334EF701C7CAAA2002BBFB2 /* Frameworks */,
+				4334EF711C7CAAA2002BBFB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4334EF751C7CAAA2002BBFB2 /* PBXTargetDependency */,
+			);
+			name = IMovieUITests;
+			productName = IMovieUITests;
+			productReference = 4334EF731C7CAAA2002BBFB2 /* IMovieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4334EF471C7CAAA2002BBFB2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = sys;
+				TargetAttributes = {
+					4334EF4E1C7CAAA2002BBFB2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3G3JV73KM2;
+					};
+					4334EF671C7CAAA2002BBFB2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3G3JV73KM2;
+						TestTargetID = 4334EF4E1C7CAAA2002BBFB2;
+					};
+					4334EF721C7CAAA2002BBFB2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3G3JV73KM2;
+						TestTargetID = 4334EF4E1C7CAAA2002BBFB2;
+					};
+				};
+			};
+			buildConfigurationList = 4334EF4A1C7CAAA2002BBFB2 /* Build configuration list for PBXProject "IMovie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4334EF461C7CAAA2002BBFB2;
+			productRefGroup = 4334EF501C7CAAA2002BBFB2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4334EF4E1C7CAAA2002BBFB2 /* IMovie */,
+				4334EF671C7CAAA2002BBFB2 /* IMovieTests */,
+				4334EF721C7CAAA2002BBFB2 /* IMovieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4334EF4D1C7CAAA2002BBFB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4334EF621C7CAAA2002BBFB2 /* LaunchScreen.storyboard in Resources */,
+				4334EF5F1C7CAAA2002BBFB2 /* Assets.xcassets in Resources */,
+				4334EF5D1C7CAAA2002BBFB2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4334EF661C7CAAA2002BBFB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4334EF711C7CAAA2002BBFB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4334EF4B1C7CAAA2002BBFB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4334EF5A1C7CAAA2002BBFB2 /* ViewController.m in Sources */,
+				4334EF571C7CAAA2002BBFB2 /* AppDelegate.m in Sources */,
+				4334EF541C7CAAA2002BBFB2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4334EF641C7CAAA2002BBFB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4334EF6D1C7CAAA2002BBFB2 /* IMovieTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4334EF6F1C7CAAA2002BBFB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4334EF781C7CAAA2002BBFB2 /* IMovieUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4334EF6A1C7CAAA2002BBFB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4334EF4E1C7CAAA2002BBFB2 /* IMovie */;
+			targetProxy = 4334EF691C7CAAA2002BBFB2 /* PBXContainerItemProxy */;
+		};
+		4334EF751C7CAAA2002BBFB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4334EF4E1C7CAAA2002BBFB2 /* IMovie */;
+			targetProxy = 4334EF741C7CAAA2002BBFB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4334EF5B1C7CAAA2002BBFB2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4334EF5C1C7CAAA2002BBFB2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4334EF601C7CAAA2002BBFB2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4334EF611C7CAAA2002BBFB2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4334EF7A1C7CAAA2002BBFB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4334EF7B1C7CAAA2002BBFB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4334EF7D1C7CAAA2002BBFB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IMovie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4334EF7E1C7CAAA2002BBFB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = IMovie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4334EF801C7CAAA2002BBFB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = IMovieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMovie.app/IMovie";
+			};
+			name = Debug;
+		};
+		4334EF811C7CAAA2002BBFB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = IMovieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMovie.app/IMovie";
+			};
+			name = Release;
+		};
+		4334EF831C7CAAA2002BBFB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = IMovieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = IMovie;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		4334EF841C7CAAA2002BBFB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = IMovieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = IMovie;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4334EF4A1C7CAAA2002BBFB2 /* Build configuration list for PBXProject "IMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4334EF7A1C7CAAA2002BBFB2 /* Debug */,
+				4334EF7B1C7CAAA2002BBFB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4334EF7C1C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4334EF7D1C7CAAA2002BBFB2 /* Debug */,
+				4334EF7E1C7CAAA2002BBFB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4334EF7F1C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4334EF801C7CAAA2002BBFB2 /* Debug */,
+				4334EF811C7CAAA2002BBFB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4334EF821C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4334EF831C7CAAA2002BBFB2 /* Debug */,
+				4334EF841C7CAAA2002BBFB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4334EF471C7CAAA2002BBFB2 /* Project object */;
+}
