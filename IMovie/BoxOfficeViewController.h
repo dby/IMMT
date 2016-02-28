@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OSCObjsViewController.h"
 
-@interface BoxOfficeViewController : OSCObjsViewController
+@interface BoxOfficeViewController : UITableViewController
 
 @end

@@ -14,15 +14,15 @@
 #import <MJRefresh.h>
 
 #import "Utils.h"
-//#import "OSCAPI.h"
 #import "LastCell.h"
+#import "IMTAPI.h"
 
 @class ONOXMLDocument;
 
 @interface OSCObjsViewController : UITableViewController
 
 @property (nonatomic, copy) void (^parseExtraInfo)(ONOXMLDocument *);
-@property (nonatomic, copy) NSString * (^generateURL)(NSUInteger page);
+@property (nonatomic, copy) NSString * (^generateURL)();
 @property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);
 @property (nonatomic, copy) void (^didRefreshSucceed)();
 
@@ -44,7 +44,6 @@
 @property (nonatomic, copy) void (^anotherNetWorking)();
 
 - (NSArray *)parseXML:(ONOXMLDocument *)xml;
-- (void)fetchMore;
 - (void)refresh;
 
 @end

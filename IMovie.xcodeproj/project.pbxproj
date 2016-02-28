@@ -7,14 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24DE0556AF9981E6FEED1524 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B16B137B8A1C5F8E4433420E /* libPods.a */; };
+		43193F8A1C7F4B6A00BC782B /* ITVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43193F891C7F4B6A00BC782B /* ITVViewController.m */; };
+		43193F8D1C7F4C8400BC782B /* BoxOfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43193F8C1C7F4C8400BC782B /* BoxOfficeViewController.m */; };
+		43193F901C7F4D8F00BC782B /* MovieScheViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43193F8F1C7F4D8F00BC782B /* MovieScheViewController.m */; };
+		43193F931C7F4DBA00BC782B /* IALLMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43193F921C7F4DBA00BC782B /* IALLMoviesViewController.m */; };
+		43193F961C7F4DDE00BC782B /* SearchMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43193F951C7F4DDE00BC782B /* SearchMovieViewController.m */; };
+		4321165D1C7E08C2000C8DAB /* IMusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321165C1C7E08C2000C8DAB /* IMusicTableViewController.m */; };
+		432116601C7E0955000C8DAB /* MineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4321165F1C7E0955000C8DAB /* MineTableViewController.m */; };
+		432116661C7E0B62000C8DAB /* IMTTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 432116651C7E0B62000C8DAB /* IMTTabViewController.m */; };
 		4334EF541C7CAAA2002BBFB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF531C7CAAA2002BBFB2 /* main.m */; };
 		4334EF571C7CAAA2002BBFB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */; };
-		4334EF5A1C7CAAA2002BBFB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF591C7CAAA2002BBFB2 /* ViewController.m */; };
 		4334EF5D1C7CAAA2002BBFB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334EF5B1C7CAAA2002BBFB2 /* Main.storyboard */; };
 		4334EF5F1C7CAAA2002BBFB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4334EF5E1C7CAAA2002BBFB2 /* Assets.xcassets */; };
 		4334EF621C7CAAA2002BBFB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334EF601C7CAAA2002BBFB2 /* LaunchScreen.storyboard */; };
 		4334EF6D1C7CAAA2002BBFB2 /* IMovieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF6C1C7CAAA2002BBFB2 /* IMovieTests.m */; };
 		4334EF781C7CAAA2002BBFB2 /* IMovieUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF771C7CAAA2002BBFB2 /* IMovieUITests.m */; };
+		4334EF9F1C7CB010002BBFB2 /* HorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF9A1C7CB010002BBFB2 /* HorizonalTableViewController.m */; };
+		4334EFA01C7CB010002BBFB2 /* SwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF9C1C7CB010002BBFB2 /* SwipableViewController.m */; };
+		4334EFA11C7CB010002BBFB2 /* TitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EF9E1C7CB010002BBFB2 /* TitleBarView.m */; };
+		4334EFA41C7CB021002BBFB2 /* OSCObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFA31C7CB021002BBFB2 /* OSCObjsViewController.m */; };
+		4334EFAC1C7CB068002BBFB2 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFA71C7CB068002BBFB2 /* Config.m */; };
+		4334EFAD1C7CB068002BBFB2 /* OSCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFA91C7CB068002BBFB2 /* OSCThread.m */; };
+		4334EFAE1C7CB068002BBFB2 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFAB1C7CB068002BBFB2 /* Utils.m */; };
+		4334EFD71C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFB11C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.m */; };
+		4334EFD81C7CB816002BBFB2 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFB41C7CB816002BBFB2 /* FAImageView.m */; };
+		4334EFD91C7CB816002BBFB2 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFB61C7CB816002BBFB2 /* NSString+FontAwesome.m */; };
+		4334EFDA1C7CB816002BBFB2 /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFB81C7CB816002BBFB2 /* UIFont+FontAwesome.m */; };
+		4334EFDB1C7CB816002BBFB2 /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFBA1C7CB816002BBFB2 /* UIImage+FontAwesome.m */; };
+		4334EFDC1C7CB816002BBFB2 /* NSDate+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFBC1C7CB816002BBFB2 /* NSDate+Util.m */; };
+		4334EFDD1C7CB816002BBFB2 /* NSDateFormatter+Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFBE1C7CB816002BBFB2 /* NSDateFormatter+Singleton.m */; };
+		4334EFDE1C7CB816002BBFB2 /* NSString+pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFC01C7CB816002BBFB2 /* NSString+pinyin.m */; };
+		4334EFDF1C7CB816002BBFB2 /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFC21C7CB816002BBFB2 /* NSString+Util.m */; };
+		4334EFE01C7CB816002BBFB2 /* NSTextAttachment+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFC41C7CB816002BBFB2 /* NSTextAttachment+Util.m */; };
+		4334EFE11C7CB816002BBFB2 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFC61C7CB816002BBFB2 /* UIBarButtonItem+Badge.m */; };
+		4334EFE21C7CB816002BBFB2 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFC81C7CB816002BBFB2 /* UIButton+Badge.m */; };
+		4334EFE31C7CB816002BBFB2 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFCA1C7CB816002BBFB2 /* UIColor+Util.m */; };
+		4334EFE41C7CB816002BBFB2 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFCC1C7CB816002BBFB2 /* UIImage+Util.m */; };
+		4334EFE51C7CB816002BBFB2 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFCE1C7CB816002BBFB2 /* UIImageView+Util.m */; };
+		4334EFE71C7CB816002BBFB2 /* UIScrollView+ScalableCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFD21C7CB816002BBFB2 /* UIScrollView+ScalableCover.m */; };
+		4334EFE81C7CB816002BBFB2 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFD41C7CB816002BBFB2 /* UIView+Util.m */; };
+		4334EFE91C7CB816002BBFB2 /* UIViewController+Segue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4334EFD61C7CB816002BBFB2 /* UIViewController+Segue.m */; };
+		436B2B161C7E008600EFE9A0 /* LastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436B2B151C7E008600EFE9A0 /* LastCell.m */; };
+		436B2B1A1C7E01A300EFE9A0 /* OSCBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 436B2B191C7E01A300EFE9A0 /* OSCBaseObject.m */; };
+		43B7E5061C81F370000BCA32 /* BoxOfficeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 43B7E5051C81F370000BCA32 /* BoxOfficeRequest.m */; };
+		43CDC4A51C82FC52007A2185 /* BoxOfficeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CDC4A41C82FC52007A2185 /* BoxOfficeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +72,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43193F881C7F4B6900BC782B /* ITVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITVViewController.h; path = Controllers/ITVViewController.h; sourceTree = "<group>"; };
+		43193F891C7F4B6A00BC782B /* ITVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITVViewController.m; path = Controllers/ITVViewController.m; sourceTree = "<group>"; };
+		43193F8B1C7F4C8400BC782B /* BoxOfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeViewController.h; sourceTree = "<group>"; };
+		43193F8C1C7F4C8400BC782B /* BoxOfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeViewController.m; sourceTree = "<group>"; };
+		43193F8E1C7F4D8F00BC782B /* MovieScheViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieScheViewController.h; path = Controllers/MovieScheViewController.h; sourceTree = "<group>"; };
+		43193F8F1C7F4D8F00BC782B /* MovieScheViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieScheViewController.m; path = Controllers/MovieScheViewController.m; sourceTree = "<group>"; };
+		43193F911C7F4DBA00BC782B /* IALLMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IALLMoviesViewController.h; path = Controllers/IALLMoviesViewController.h; sourceTree = "<group>"; };
+		43193F921C7F4DBA00BC782B /* IALLMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IALLMoviesViewController.m; path = Controllers/IALLMoviesViewController.m; sourceTree = "<group>"; };
+		43193F941C7F4DDE00BC782B /* SearchMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchMovieViewController.h; path = Controllers/SearchMovieViewController.h; sourceTree = "<group>"; };
+		43193F951C7F4DDE00BC782B /* SearchMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchMovieViewController.m; path = Controllers/SearchMovieViewController.m; sourceTree = "<group>"; };
+		4321165B1C7E08C2000C8DAB /* IMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMusicTableViewController.h; path = Controllers/IMusicTableViewController.h; sourceTree = "<group>"; };
+		4321165C1C7E08C2000C8DAB /* IMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMusicTableViewController.m; path = Controllers/IMusicTableViewController.m; sourceTree = "<group>"; };
+		4321165E1C7E0955000C8DAB /* MineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineTableViewController.h; path = Controllers/MineTableViewController.h; sourceTree = "<group>"; };
+		4321165F1C7E0955000C8DAB /* MineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineTableViewController.m; path = Controllers/MineTableViewController.m; sourceTree = "<group>"; };
+		432116641C7E0B62000C8DAB /* IMTTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IMTTabViewController.h; path = Controllers/IMTTabViewController.h; sourceTree = "<group>"; };
+		432116651C7E0B62000C8DAB /* IMTTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMTTabViewController.m; path = Controllers/IMTTabViewController.m; sourceTree = "<group>"; };
 		4334EF4F1C7CAAA2002BBFB2 /* IMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4334EF531C7CAAA2002BBFB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4334EF551C7CAAA2002BBFB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4334EF581C7CAAA2002BBFB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4334EF591C7CAAA2002BBFB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4334EF5C1C7CAAA2002BBFB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4334EF5E1C7CAAA2002BBFB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4334EF611C7CAAA2002BBFB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +102,68 @@
 		4334EF731C7CAAA2002BBFB2 /* IMovieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMovieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4334EF771C7CAAA2002BBFB2 /* IMovieUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMovieUITests.m; sourceTree = "<group>"; };
 		4334EF791C7CAAA2002BBFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4334EF991C7CB010002BBFB2 /* HorizonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonalTableViewController.h; sourceTree = "<group>"; };
+		4334EF9A1C7CB010002BBFB2 /* HorizonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonalTableViewController.m; sourceTree = "<group>"; };
+		4334EF9B1C7CB010002BBFB2 /* SwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipableViewController.h; sourceTree = "<group>"; };
+		4334EF9C1C7CB010002BBFB2 /* SwipableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipableViewController.m; sourceTree = "<group>"; };
+		4334EF9D1C7CB010002BBFB2 /* TitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleBarView.h; sourceTree = "<group>"; };
+		4334EF9E1C7CB010002BBFB2 /* TitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleBarView.m; sourceTree = "<group>"; };
+		4334EFA21C7CB021002BBFB2 /* OSCObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSCObjsViewController.h; path = Controllers/OSCObjsViewController.h; sourceTree = "<group>"; };
+		4334EFA31C7CB021002BBFB2 /* OSCObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSCObjsViewController.m; path = Controllers/OSCObjsViewController.m; sourceTree = "<group>"; };
+		4334EFA61C7CB068002BBFB2 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		4334EFA71C7CB068002BBFB2 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		4334EFA81C7CB068002BBFB2 /* OSCThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCThread.h; sourceTree = "<group>"; };
+		4334EFA91C7CB068002BBFB2 /* OSCThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCThread.m; sourceTree = "<group>"; };
+		4334EFAA1C7CB068002BBFB2 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		4334EFAB1C7CB068002BBFB2 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		4334EFB01C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+Util.h"; sourceTree = "<group>"; };
+		4334EFB11C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+Util.m"; sourceTree = "<group>"; };
+		4334EFB31C7CB816002BBFB2 /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
+		4334EFB41C7CB816002BBFB2 /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
+		4334EFB51C7CB816002BBFB2 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		4334EFB61C7CB816002BBFB2 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		4334EFB71C7CB816002BBFB2 /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAwesome.h"; sourceTree = "<group>"; };
+		4334EFB81C7CB816002BBFB2 /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
+		4334EFB91C7CB816002BBFB2 /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
+		4334EFBA1C7CB816002BBFB2 /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
+		4334EFBB1C7CB816002BBFB2 /* NSDate+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Util.h"; sourceTree = "<group>"; };
+		4334EFBC1C7CB816002BBFB2 /* NSDate+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Util.m"; sourceTree = "<group>"; };
+		4334EFBD1C7CB816002BBFB2 /* NSDateFormatter+Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Singleton.h"; sourceTree = "<group>"; };
+		4334EFBE1C7CB816002BBFB2 /* NSDateFormatter+Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Singleton.m"; sourceTree = "<group>"; };
+		4334EFBF1C7CB816002BBFB2 /* NSString+pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+pinyin.h"; sourceTree = "<group>"; };
+		4334EFC01C7CB816002BBFB2 /* NSString+pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+pinyin.m"; sourceTree = "<group>"; };
+		4334EFC11C7CB816002BBFB2 /* NSString+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
+		4334EFC21C7CB816002BBFB2 /* NSString+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
+		4334EFC31C7CB816002BBFB2 /* NSTextAttachment+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+Util.h"; sourceTree = "<group>"; };
+		4334EFC41C7CB816002BBFB2 /* NSTextAttachment+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+Util.m"; sourceTree = "<group>"; };
+		4334EFC51C7CB816002BBFB2 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
+		4334EFC61C7CB816002BBFB2 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		4334EFC71C7CB816002BBFB2 /* UIButton+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badge.h"; sourceTree = "<group>"; };
+		4334EFC81C7CB816002BBFB2 /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
+		4334EFC91C7CB816002BBFB2 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		4334EFCA1C7CB816002BBFB2 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		4334EFCB1C7CB816002BBFB2 /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
+		4334EFCC1C7CB816002BBFB2 /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
+		4334EFCD1C7CB816002BBFB2 /* UIImageView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Util.h"; sourceTree = "<group>"; };
+		4334EFCE1C7CB816002BBFB2 /* UIImageView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Util.m"; sourceTree = "<group>"; };
+		4334EFD11C7CB816002BBFB2 /* UIScrollView+ScalableCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ScalableCover.h"; sourceTree = "<group>"; };
+		4334EFD21C7CB816002BBFB2 /* UIScrollView+ScalableCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ScalableCover.m"; sourceTree = "<group>"; };
+		4334EFD31C7CB816002BBFB2 /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
+		4334EFD41C7CB816002BBFB2 /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
+		4334EFD51C7CB816002BBFB2 /* UIViewController+Segue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Segue.h"; sourceTree = "<group>"; };
+		4334EFD61C7CB816002BBFB2 /* UIViewController+Segue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Segue.m"; sourceTree = "<group>"; };
+		436B2B141C7E008600EFE9A0 /* LastCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastCell.h; path = Views/LastCell.h; sourceTree = "<group>"; };
+		436B2B151C7E008600EFE9A0 /* LastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LastCell.m; path = Views/LastCell.m; sourceTree = "<group>"; };
+		436B2B181C7E01A300EFE9A0 /* OSCBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCBaseObject.h; sourceTree = "<group>"; };
+		436B2B191C7E01A300EFE9A0 /* OSCBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCBaseObject.m; sourceTree = "<group>"; };
+		43ACC6C81C80A0E40020554F /* IMTAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMTAPI.h; sourceTree = "<group>"; };
+		43B7E5041C81F370000BCA32 /* BoxOfficeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxOfficeRequest.h; path = Controllers/BoxOfficeRequest.h; sourceTree = "<group>"; };
+		43B7E5051C81F370000BCA32 /* BoxOfficeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxOfficeRequest.m; path = Controllers/BoxOfficeRequest.m; sourceTree = "<group>"; };
+		43CDC4A31C82FC52007A2185 /* BoxOfficeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxOfficeCell.h; path = Controllers/BoxOfficeCell.h; sourceTree = "<group>"; };
+		43CDC4A41C82FC52007A2185 /* BoxOfficeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxOfficeCell.m; path = Controllers/BoxOfficeCell.m; sourceTree = "<group>"; };
+		4A20B25E2C23A7886A88CE67 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6C226203C8DFF54C83F9B3D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B16B137B8A1C5F8E4433420E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DE0556AF9981E6FEED1524 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432116571C7E050B000C8DAB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				432116641C7E0B62000C8DAB /* IMTTabViewController.h */,
+				432116651C7E0B62000C8DAB /* IMTTabViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		4334EF461C7CAAA2002BBFB2 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +208,8 @@
 				4334EF6B1C7CAAA2002BBFB2 /* IMovieTests */,
 				4334EF761C7CAAA2002BBFB2 /* IMovieUITests */,
 				4334EF501C7CAAA2002BBFB2 /* Products */,
+				862F667139B67A313B193F5F /* Pods */,
+				EAB99A4492888659E928A330 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +226,13 @@
 		4334EF511C7CAAA2002BBFB2 /* IMovie */ = {
 			isa = PBXGroup;
 			children = (
-				4334EF551C7CAAA2002BBFB2 /* AppDelegate.h */,
-				4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */,
-				4334EF581C7CAAA2002BBFB2 /* ViewController.h */,
-				4334EF591C7CAAA2002BBFB2 /* ViewController.m */,
+				4334EF851C7CAB44002BBFB2 /* Application */,
+				4334EF861C7CAB64002BBFB2 /* Models */,
+				4334EF871C7CAB74002BBFB2 /* Controllers */,
+				4334EF881C7CAB80002BBFB2 /* Views */,
+				4334EFAF1C7CB816002BBFB2 /* Categories */,
+				4334EFA51C7CB068002BBFB2 /* Utils */,
+				4334EF8B1C7CABA2002BBFB2 /* Resources */,
 				4334EF5B1C7CAAA2002BBFB2 /* Main.storyboard */,
 				4334EF5E1C7CAAA2002BBFB2 /* Assets.xcassets */,
 				4334EF601C7CAAA2002BBFB2 /* LaunchScreen.storyboard */,
@@ -140,6 +268,190 @@
 			path = IMovieUITests;
 			sourceTree = "<group>";
 		};
+		4334EF851C7CAB44002BBFB2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF551C7CAAA2002BBFB2 /* AppDelegate.h */,
+				4334EF561C7CAAA2002BBFB2 /* AppDelegate.m */,
+				43ACC6C81C80A0E40020554F /* IMTAPI.h */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		4334EF861C7CAB64002BBFB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				436B2B171C7E01A300EFE9A0 /* IMT */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4334EF871C7CAB74002BBFB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43ACC6C91C80AAFB0020554F /* BoxOffices */,
+				432116571C7E050B000C8DAB /* Main */,
+				4334EF8C1C7CAC48002BBFB2 /* Main Controllers */,
+				4321165B1C7E08C2000C8DAB /* IMusicTableViewController.h */,
+				4321165C1C7E08C2000C8DAB /* IMusicTableViewController.m */,
+				4321165E1C7E0955000C8DAB /* MineTableViewController.h */,
+				4321165F1C7E0955000C8DAB /* MineTableViewController.m */,
+				43193F881C7F4B6900BC782B /* ITVViewController.h */,
+				43193F891C7F4B6A00BC782B /* ITVViewController.m */,
+				43193F8E1C7F4D8F00BC782B /* MovieScheViewController.h */,
+				43193F8F1C7F4D8F00BC782B /* MovieScheViewController.m */,
+				43193F911C7F4DBA00BC782B /* IALLMoviesViewController.h */,
+				43193F921C7F4DBA00BC782B /* IALLMoviesViewController.m */,
+				43193F941C7F4DDE00BC782B /* SearchMovieViewController.h */,
+				43193F951C7F4DDE00BC782B /* SearchMovieViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4334EF881C7CAB80002BBFB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				436B2B141C7E008600EFE9A0 /* LastCell.h */,
+				436B2B151C7E008600EFE9A0 /* LastCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4334EF8B1C7CABA2002BBFB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4334EF8C1C7CAC48002BBFB2 /* Main Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4334EFA21C7CB021002BBFB2 /* OSCObjsViewController.h */,
+				4334EFA31C7CB021002BBFB2 /* OSCObjsViewController.m */,
+				4334EF981C7CB010002BBFB2 /* SwipableViewController */,
+			);
+			name = "Main Controllers";
+			sourceTree = "<group>";
+		};
+		4334EF981C7CB010002BBFB2 /* SwipableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4334EF991C7CB010002BBFB2 /* HorizonalTableViewController.h */,
+				4334EF9A1C7CB010002BBFB2 /* HorizonalTableViewController.m */,
+				4334EF9B1C7CB010002BBFB2 /* SwipableViewController.h */,
+				4334EF9C1C7CB010002BBFB2 /* SwipableViewController.m */,
+				4334EF9D1C7CB010002BBFB2 /* TitleBarView.h */,
+				4334EF9E1C7CB010002BBFB2 /* TitleBarView.m */,
+			);
+			name = SwipableViewController;
+			path = Controllers/SwipableViewController;
+			sourceTree = "<group>";
+		};
+		4334EFA51C7CB068002BBFB2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4334EFA61C7CB068002BBFB2 /* Config.h */,
+				4334EFA71C7CB068002BBFB2 /* Config.m */,
+				4334EFA81C7CB068002BBFB2 /* OSCThread.h */,
+				4334EFA91C7CB068002BBFB2 /* OSCThread.m */,
+				4334EFAA1C7CB068002BBFB2 /* Utils.h */,
+				4334EFAB1C7CB068002BBFB2 /* Utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4334EFAF1C7CB816002BBFB2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4334EFB01C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.h */,
+				4334EFB11C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.m */,
+				4334EFB21C7CB816002BBFB2 /* FontAwesome */,
+				4334EFBB1C7CB816002BBFB2 /* NSDate+Util.h */,
+				4334EFBC1C7CB816002BBFB2 /* NSDate+Util.m */,
+				4334EFBD1C7CB816002BBFB2 /* NSDateFormatter+Singleton.h */,
+				4334EFBE1C7CB816002BBFB2 /* NSDateFormatter+Singleton.m */,
+				4334EFBF1C7CB816002BBFB2 /* NSString+pinyin.h */,
+				4334EFC01C7CB816002BBFB2 /* NSString+pinyin.m */,
+				4334EFC11C7CB816002BBFB2 /* NSString+Util.h */,
+				4334EFC21C7CB816002BBFB2 /* NSString+Util.m */,
+				4334EFC31C7CB816002BBFB2 /* NSTextAttachment+Util.h */,
+				4334EFC41C7CB816002BBFB2 /* NSTextAttachment+Util.m */,
+				4334EFC51C7CB816002BBFB2 /* UIBarButtonItem+Badge.h */,
+				4334EFC61C7CB816002BBFB2 /* UIBarButtonItem+Badge.m */,
+				4334EFC71C7CB816002BBFB2 /* UIButton+Badge.h */,
+				4334EFC81C7CB816002BBFB2 /* UIButton+Badge.m */,
+				4334EFC91C7CB816002BBFB2 /* UIColor+Util.h */,
+				4334EFCA1C7CB816002BBFB2 /* UIColor+Util.m */,
+				4334EFCB1C7CB816002BBFB2 /* UIImage+Util.h */,
+				4334EFCC1C7CB816002BBFB2 /* UIImage+Util.m */,
+				4334EFCD1C7CB816002BBFB2 /* UIImageView+Util.h */,
+				4334EFCE1C7CB816002BBFB2 /* UIImageView+Util.m */,
+				4334EFD11C7CB816002BBFB2 /* UIScrollView+ScalableCover.h */,
+				4334EFD21C7CB816002BBFB2 /* UIScrollView+ScalableCover.m */,
+				4334EFD31C7CB816002BBFB2 /* UIView+Util.h */,
+				4334EFD41C7CB816002BBFB2 /* UIView+Util.m */,
+				4334EFD51C7CB816002BBFB2 /* UIViewController+Segue.h */,
+				4334EFD61C7CB816002BBFB2 /* UIViewController+Segue.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4334EFB21C7CB816002BBFB2 /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				4334EFB31C7CB816002BBFB2 /* FAImageView.h */,
+				4334EFB41C7CB816002BBFB2 /* FAImageView.m */,
+				4334EFB51C7CB816002BBFB2 /* NSString+FontAwesome.h */,
+				4334EFB61C7CB816002BBFB2 /* NSString+FontAwesome.m */,
+				4334EFB71C7CB816002BBFB2 /* UIFont+FontAwesome.h */,
+				4334EFB81C7CB816002BBFB2 /* UIFont+FontAwesome.m */,
+				4334EFB91C7CB816002BBFB2 /* UIImage+FontAwesome.h */,
+				4334EFBA1C7CB816002BBFB2 /* UIImage+FontAwesome.m */,
+			);
+			path = FontAwesome;
+			sourceTree = "<group>";
+		};
+		436B2B171C7E01A300EFE9A0 /* IMT */ = {
+			isa = PBXGroup;
+			children = (
+				436B2B181C7E01A300EFE9A0 /* OSCBaseObject.h */,
+				436B2B191C7E01A300EFE9A0 /* OSCBaseObject.m */,
+			);
+			name = IMT;
+			path = Models/IMT;
+			sourceTree = "<group>";
+		};
+		43ACC6C91C80AAFB0020554F /* BoxOffices */ = {
+			isa = PBXGroup;
+			children = (
+				43193F8B1C7F4C8400BC782B /* BoxOfficeViewController.h */,
+				43193F8C1C7F4C8400BC782B /* BoxOfficeViewController.m */,
+				43B7E5041C81F370000BCA32 /* BoxOfficeRequest.h */,
+				43B7E5051C81F370000BCA32 /* BoxOfficeRequest.m */,
+				43CDC4A31C82FC52007A2185 /* BoxOfficeCell.h */,
+				43CDC4A41C82FC52007A2185 /* BoxOfficeCell.m */,
+			);
+			name = BoxOffices;
+			sourceTree = "<group>";
+		};
+		862F667139B67A313B193F5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C226203C8DFF54C83F9B3D6 /* Pods.debug.xcconfig */,
+				4A20B25E2C23A7886A88CE67 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EAB99A4492888659E928A330 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B16B137B8A1C5F8E4433420E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +459,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4334EF7C1C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovie" */;
 			buildPhases = (
+				1B0EC4FC4CE27967CE95E030 /* Check Pods Manifest.lock */,
 				4334EF4B1C7CAAA2002BBFB2 /* Sources */,
 				4334EF4C1C7CAAA2002BBFB2 /* Frameworks */,
 				4334EF4D1C7CAAA2002BBFB2 /* Resources */,
+				3A310BFB9C0EBAD85E1A1278 /* Embed Pods Frameworks */,
+				9C67205E86A10AAD35D14EC8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,7 +522,6 @@
 				TargetAttributes = {
 					4334EF4E1C7CAAA2002BBFB2 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 3G3JV73KM2;
 					};
 					4334EF671C7CAAA2002BBFB2 = {
 						CreatedOnToolsVersion = 7.2;
@@ -268,14 +582,98 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B0EC4FC4CE27967CE95E030 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A310BFB9C0EBAD85E1A1278 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C67205E86A10AAD35D14EC8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4334EF4B1C7CAAA2002BBFB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4334EF5A1C7CAAA2002BBFB2 /* ViewController.m in Sources */,
+				4334EFE71C7CB816002BBFB2 /* UIScrollView+ScalableCover.m in Sources */,
+				4321165D1C7E08C2000C8DAB /* IMusicTableViewController.m in Sources */,
+				4334EFDE1C7CB816002BBFB2 /* NSString+pinyin.m in Sources */,
+				4334EFE21C7CB816002BBFB2 /* UIButton+Badge.m in Sources */,
+				432116601C7E0955000C8DAB /* MineTableViewController.m in Sources */,
+				4334EFAE1C7CB068002BBFB2 /* Utils.m in Sources */,
+				4334EFAC1C7CB068002BBFB2 /* Config.m in Sources */,
+				43B7E5061C81F370000BCA32 /* BoxOfficeRequest.m in Sources */,
+				432116661C7E0B62000C8DAB /* IMTTabViewController.m in Sources */,
+				43193F8D1C7F4C8400BC782B /* BoxOfficeViewController.m in Sources */,
+				4334EFDC1C7CB816002BBFB2 /* NSDate+Util.m in Sources */,
+				4334EFDA1C7CB816002BBFB2 /* UIFont+FontAwesome.m in Sources */,
+				43193F961C7F4DDE00BC782B /* SearchMovieViewController.m in Sources */,
 				4334EF571C7CAAA2002BBFB2 /* AppDelegate.m in Sources */,
+				4334EFE41C7CB816002BBFB2 /* UIImage+Util.m in Sources */,
+				436B2B161C7E008600EFE9A0 /* LastCell.m in Sources */,
+				4334EFE81C7CB816002BBFB2 /* UIView+Util.m in Sources */,
+				4334EFA01C7CB010002BBFB2 /* SwipableViewController.m in Sources */,
+				4334EFAD1C7CB068002BBFB2 /* OSCThread.m in Sources */,
+				4334EFE91C7CB816002BBFB2 /* UIViewController+Segue.m in Sources */,
+				4334EFE51C7CB816002BBFB2 /* UIImageView+Util.m in Sources */,
+				4334EFDD1C7CB816002BBFB2 /* NSDateFormatter+Singleton.m in Sources */,
+				4334EFDB1C7CB816002BBFB2 /* UIImage+FontAwesome.m in Sources */,
+				4334EFA11C7CB010002BBFB2 /* TitleBarView.m in Sources */,
 				4334EF541C7CAAA2002BBFB2 /* main.m in Sources */,
+				43193F8A1C7F4B6A00BC782B /* ITVViewController.m in Sources */,
+				436B2B1A1C7E01A300EFE9A0 /* OSCBaseObject.m in Sources */,
+				4334EFA41C7CB021002BBFB2 /* OSCObjsViewController.m in Sources */,
+				4334EFDF1C7CB816002BBFB2 /* NSString+Util.m in Sources */,
+				43CDC4A51C82FC52007A2185 /* BoxOfficeCell.m in Sources */,
+				4334EFE11C7CB816002BBFB2 /* UIBarButtonItem+Badge.m in Sources */,
+				4334EFD91C7CB816002BBFB2 /* NSString+FontAwesome.m in Sources */,
+				4334EFD71C7CB816002BBFB2 /* AFHTTPRequestOperationManager+Util.m in Sources */,
+				43193F901C7F4D8F00BC782B /* MovieScheViewController.m in Sources */,
+				4334EFE01C7CB816002BBFB2 /* NSTextAttachment+Util.m in Sources */,
+				4334EFE31C7CB816002BBFB2 /* UIColor+Util.m in Sources */,
+				43193F931C7F4DBA00BC782B /* IALLMoviesViewController.m in Sources */,
+				4334EF9F1C7CB010002BBFB2 /* HorizonalTableViewController.m in Sources */,
+				4334EFD81C7CB816002BBFB2 /* FAImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,8 +810,10 @@
 		};
 		4334EF7D1C7CAAA2002BBFB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C226203C8DFF54C83F9B3D6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = IMovie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovie;
@@ -423,8 +823,10 @@
 		};
 		4334EF7E1C7CAAA2002BBFB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A20B25E2C23A7886A88CE67 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = IMovie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sys.IMovie;
@@ -499,6 +901,7 @@
 				4334EF7E1C7CAAA2002BBFB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4334EF7F1C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovieTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +910,7 @@
 				4334EF811C7CAAA2002BBFB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4334EF821C7CAAA2002BBFB2 /* Build configuration list for PBXNativeTarget "IMovieUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +919,7 @@
 				4334EF841C7CAAA2002BBFB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <YTKNetwork/YTKNetworkConfig.h>
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <YTKNetworkConfig.h>
+#import "IMTAPI.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //Set Background Color
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //Set Network
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    [YTKNetworkConfig sharedInstance].baseUrl = BaseURL;
+    
+    //Set UserAgent
+    NSDictionary *userAgent = @{@"UserAgent": @"Mozilla/5.0 (iPhone; CPU iPhone OS 8_4 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12H143 Safari/600.1.4"};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:userAgent];
+    
     return YES;
 }
 
