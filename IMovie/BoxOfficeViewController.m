@@ -18,8 +18,11 @@
 static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 
 @interface BoxOfficeViewController ()
+{
+    NSArray *keys;
+}
 
-@property(nonatomic, strong) NSMutableArray *BoxOfficeArray;
+@property(nonatomic, strong) NSMutableDictionary *BoxOfficeDic;
 
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
 @property (nonatomic, assign) BOOL needAutoRefresh;
@@ -32,6 +35,10 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.BoxOfficeDic = [NSMutableDictionary dictionaryWithCapacity:6];
+    keys = @[ @"hour", @"day", @"weekend", @"month" ,@"global"];
+
     
     [self.tableView registerClass:[BoxOfficeCell class] forCellReuseIdentifier:kBoxOfficeCellID];
     [self fetchObjects];
@@ -46,18 +53,17 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     BoxOfficeRequest *weekendRequest    = [[BoxOfficeRequest alloc] initWithType:BoxOfficeTypeWeekend   withPara:NULL];
     //BoxOfficeRequest *weekRequest     = [[BoxOfficeRequest alloc] initWithType:BoxOfficeTypeWeek      withPara:NULL];
     BoxOfficeRequest *monthRequest      = [[BoxOfficeRequest alloc] initWithType:BoxOfficeTypeMonth     withPara:@{@"sdate":@"2016-1-11"}];
-    BoxOfficeRequest *yearRequest       = [[BoxOfficeRequest alloc] initWithType:BoxOfficeTypeYear      withPara:@{@"year":@"2016"}];
+    //BoxOfficeRequest *yearRequest       = [[BoxOfficeRequest alloc] initWithType:BoxOfficeTypeYear      withPara:@{@"year":@"2016"}];
     BoxOfficeRequest *globalRequest     = [[BoxOfficeRequest alloc] initWithType:BoxOfficeTypeGlobal    withPara:@{@"weekId":@"3500"}];
     
-    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[/*hourRequest,*/ dayRequest/*, weekendRequest, weekendRequest, monthRequest, yearRequest, globalRequest*/]];
+    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[hourRequest, dayRequest, weekendRequest, monthRequest , globalRequest]];
     [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest *batchRequest) {
         
-        NSLog(@"succeed");
-        NSArray *requests = batchRequest.requestArray;
-        self.BoxOfficeArray = [requests copy];
-        
-        YTKBaseRequest *ytkb    = (YTKBaseRequest *)self.BoxOfficeArray[0];
-        NSLog(@"info: %@", ytkb.responseString);
+        for (int i = 0; i < 5; i++) {
+            YTKBaseRequest *ytkb    = (YTKBaseRequest *)(batchRequest.requestArray[i]);
+            NSLog(@"info: %@", [ytkb.responseJSONObject objectForKey:@"data"]);
+            [self.BoxOfficeDic setObject:[ytkb.responseJSONObject objectForKey:@"data"] forKey:keys[i]];
+        }
         
         [self.tableView reloadData];
         
@@ -68,41 +74,63 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 }
 
 #pragma mark - Table view data source
+/*!
+ *  @brief 由于返回的josn数据类型不一致，所以这里需要进行处理
+ *      实时票房（hour）
+ *      日、周末、月票房格式一致
+ *      全球票房
+ */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BoxOfficeCell *cell = [tableView dequeueReusableCellWithIdentifier:kBoxOfficeCellID forIndexPath:indexPath];
     
-    NSInteger index = indexPath.row;
-    NSLog(@"index: %ld", (long)indexPath.row);
     cell.backgroundColor = [UIColor whiteColor];
     
-    YTKBaseRequest *ytkb    = (YTKBaseRequest *)self.BoxOfficeArray[index];
-    NSDictionary *element   = [self dictionaryWithJsonString:ytkb.responseString];
-    [cell.titleLabel setText: @"日榜单"];
+    NSArray      *eleArr    = nil;
+    [cell.titleLabel setText: @""];
     
-    
-    if (element != NULL && indexPath.row == 0 && [element[@"data1"] count] >= 3) {
-        
-        [cell.nameLeftLabel     setText: element[@"data1"][0][@"MovieName"]];
-        [cell.nameCenterLabel   setText: element[@"data1"][1][@"MovieName"]];
-        [cell.nameRightLabel    setText: element[@"data1"][2][@"MovieName"]];
-        
-        [cell.boxOfficeLeftLabel    setText: element[@"data1"][0][@"sumBoxOffice"]];
-        [cell.boxOfficeCenterLabel  setText: element[@"data1"][1][@"sumBoxOffice"]];
-        [cell.boxOfficeRightLabel   setText: element[@"data1"][2][@"sumBoxOffice"]];
-        
-        NSString *imgStrLeft = [ImageSuffix stringByAppendingString:element[@"data1"][0][@"MovieImg"]];
-        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrLeft] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        
-        NSString *imgStrCenter = [ImageSuffix stringByAppendingString:element[@"data1"][1][@"MovieImg"]];
-        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrCenter] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        
-        NSString *imgStrRight = [ImageSuffix stringByAppendingString:element[@"data1"][2][@"MovieImg"]];
-        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrRight] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        
+    if (indexPath.row == 0) {
+        eleArr = [[self.BoxOfficeDic objectForKey:keys[0]] objectForKey:@"data2"];
+    }
+    else if (indexPath.row < 4){
+        NSLog(@"indexPath.row %ld", (long)indexPath.row);
+        eleArr = [[self.BoxOfficeDic objectForKey:keys[indexPath.row]] objectForKey:@"data1"];
+    } else {
+        eleArr = [self.BoxOfficeDic objectForKey:keys[indexPath.row]];
     }
     
+    @try {
+        [cell.nameLeftLabel     setText: eleArr[0][@"MovieName"]];
+        [cell.nameCenterLabel   setText: eleArr[1][@"MovieName"]];
+        [cell.nameRightLabel    setText: eleArr[2][@"MovieName"]];
+        
+        NSString *boxOfficeKey = @"";
+        if (indexPath.row != 0) {
+            boxOfficeKey = @"sumBoxOffice";
+        } else {
+            boxOfficeKey = @"";
+        }
+
+        [cell.boxOfficeLeftLabel    setText: eleArr[0][@"sumBoxOffice"]];
+        [cell.boxOfficeCenterLabel  setText: eleArr[1][@"sumBoxOffice"]];
+        [cell.boxOfficeRightLabel   setText: eleArr[2][@"sumBoxOffice"]];
+        
+        NSString *imgStrLeft = [ImageSuffix stringByAppendingString:eleArr[0][@"MovieImg"]];
+        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrLeft] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            
+        NSString *imgStrCenter = [ImageSuffix stringByAppendingString:eleArr[1][@"MovieImg"]];
+        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrCenter] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            
+        NSString *imgStrRight = [ImageSuffix stringByAppendingString:eleArr[2][@"MovieImg"]];
+        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrRight] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    }
+    @catch (NSException *exception) {
+            
+    }
+    @finally {
+            
+    }
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor grayColor];
     
@@ -111,7 +139,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
