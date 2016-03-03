@@ -76,7 +76,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
  */
 - (void)initEChart
 {
-    _eColumnChart = [[EColumnChart alloc] initWithFrame:CGRectMake(30, 30, CGRectGetWidth(self.view.frame), 200)];
+    _eColumnChart = [[EColumnChart alloc] initWithFrame:CGRectMake(30, 30, CGRectGetWidth(self.view.frame) - 30, 200)];
     [_eColumnChart setColumnsIndexStartFromLeft:YES];
     [_eColumnChart setDelegate:self];
     [_eColumnChart setDataSource:self];
@@ -174,18 +174,37 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
             boxOfficeKey = @"";
         }
 
-        [cell.boxOfficeLeftLabel    setText: eleArr[0][@"sumBoxOffice"]];
-        [cell.boxOfficeCenterLabel  setText: eleArr[1][@"sumBoxOffice"]];
-        [cell.boxOfficeRightLabel   setText: eleArr[2][@"sumBoxOffice"]];
+        [cell.boxOfficeLeftLabel    setText: eleArr[0][@"BoxOffice"]];
+        [cell.boxOfficeCenterLabel  setText: eleArr[1][@"BoxOffice"]];
+        [cell.boxOfficeRightLabel   setText: eleArr[2][@"BoxOffice"]];
         
-        NSString *imgStrLeft = [ImageSuffix stringByAppendingString:eleArr[0][@"MovieImg"]];
+        NSString *imgStrLeft    = NULL;
+        NSString *imgStrCenter  = NULL;
+        NSString *imgStrRight   = NULL;
+        
+        if (indexPath.row == 0) {
+            // 实时票房
+            imgStrLeft      = [ImageSuffix stringByAppendingString:eleArr[0][@"MovieImg"]];
+            imgStrCenter    = [ImageSuffix stringByAppendingString:eleArr[1][@"MovieImg"]];
+            imgStrRight     = [ImageSuffix stringByAppendingString:eleArr[2][@"MovieImg"]];
+        } else if(indexPath.row == 1) {
+            // 日票房
+            imgStrLeft      = [@"http://www.cbooo.cn/" stringByAppendingString:eleArr[0][@"MovieImg"]];
+            imgStrCenter    = [@"http://www.cbooo.cn/" stringByAppendingString:eleArr[1][@"MovieImg"]];
+            imgStrRight     = [@"http://www.cbooo.cn/" stringByAppendingString:eleArr[2][@"MovieImg"]];
+            
+        } else {
+            // 周末票房 月票房 全球票房
+            imgStrLeft      = [eleArr[0] objectForKey:@"DefaultImage"];
+            imgStrCenter    = [eleArr[1] objectForKey:@"DefaultImage"];
+            imgStrRight     = [eleArr[2] objectForKey:@"DefaultImage"];
+        }
+        
         [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrLeft] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
-        NSString *imgStrCenter = [ImageSuffix stringByAppendingString:eleArr[1][@"MovieImg"]];
-        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrCenter] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.imageCenter setImageWithURL:[NSURL URLWithString:imgStrCenter] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             
-        NSString *imgStrRight = [ImageSuffix stringByAppendingString:eleArr[2][@"MovieImg"]];
-        [cell.imageLeft setImageWithURL:[NSURL URLWithString:imgStrRight] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.imageRight setImageWithURL:[NSURL URLWithString:imgStrRight] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
     @catch (NSException *exception) {
             
@@ -206,6 +225,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     /*
     OSCNews *news = self.objects[indexPath.row];
     
@@ -217,8 +237,12 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     self.label.font = [UIFont systemFontOfSize:13];
     height += [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     */
-    
-    return 150;
+    if (indexPath.row == 0) {
+        return 180;
+    }
+    else {
+        return 150;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

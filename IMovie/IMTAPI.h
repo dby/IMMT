@@ -20,4 +20,5 @@
 #define IMTAPI_BoxOffice_Year   @"http://www.cbooo.cn/year?year=2016"
 #define IMTAPI_BoxOffice_World  @"http://www.cbooo.cn/boxOffice/getAllInfo?weekId=3752"
 
+
 #endif /* IMTAPI_h */

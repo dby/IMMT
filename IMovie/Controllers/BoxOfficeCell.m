@@ -34,21 +34,21 @@
     self.nameLeftLabel = [UILabel new];
     self.nameLeftLabel.numberOfLines = 0;
     self.nameLeftLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.nameLeftLabel.font = [UIFont systemFontOfSize:13];
+    self.nameLeftLabel.font = [UIFont systemFontOfSize:10];
     self.nameLeftLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.nameLeftLabel];
     
     self.nameCenterLabel = [UILabel new];
     self.nameCenterLabel.numberOfLines = 0;
     self.nameCenterLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.nameCenterLabel.font = [UIFont systemFontOfSize:13];
+    self.nameCenterLabel.font = [UIFont systemFontOfSize:10];
     self.nameCenterLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.nameCenterLabel];
     
     self.nameRightLabel = [UILabel new];
     self.nameRightLabel.numberOfLines = 0;
     self.nameRightLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.nameRightLabel.font = [UIFont systemFontOfSize:13];
+    self.nameRightLabel.font = [UIFont systemFontOfSize:10];
     self.nameRightLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.nameRightLabel];
     
@@ -97,31 +97,31 @@
     
     NSDictionary *viewsDict = NSDictionaryOfVariableBindings(_titleLabel, _nameLeftLabel, _nameCenterLabel, _nameRightLabel, _imageLeft, _imageCenter, _imageRight, _boxOfficeLeftLabel, _boxOfficeCenterLabel, _boxOfficeRightLabel, _MoreBtn);
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[_titleLabel]-[_MoreBtn(30)]-5-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_titleLabel]-[_MoreBtn(30)]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[_imageLeft]-5-[_imageCenter]-5-[_imageRight]-5-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_imageLeft(_imageCenter)]-10-[_imageCenter(_imageRight)]-10-[_imageRight]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[_nameLeftLabel]-8-[_nameCenterLabel]-8-[_nameRightLabel]-5-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_nameLeftLabel(_nameCenterLabel)]-10-[_nameCenterLabel(_nameRightLabel)]-10-[_nameRightLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[_boxOfficeLeftLabel]-5-[_boxOfficeCenterLabel]-5-[_boxOfficeRightLabel]-5-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_boxOfficeLeftLabel(_boxOfficeCenterLabel)]-10-[_boxOfficeCenterLabel(_boxOfficeRightLabel)]-10-[_boxOfficeRightLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[_titleLabel]-3-[_imageLeft(60)]-3-[_nameLeftLabel]-3-[_boxOfficeLeftLabel]"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageLeft(100)]-5-[_nameLeftLabel]-5-[_boxOfficeLeftLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[_titleLabel]-3-[_imageCenter(60)]-3-[_nameCenterLabel]-3-[_boxOfficeCenterLabel]"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageCenter(100)]-5-[_nameCenterLabel]-5-[_boxOfficeCenterLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[_titleLabel]-3-[_imageRight(60)]-3-[_nameRightLabel]-3-[_boxOfficeRightLabel]"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageRight(100)]-5-[_nameRightLabel]-5-[_boxOfficeRightLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
