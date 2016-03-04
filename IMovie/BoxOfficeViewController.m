@@ -7,15 +7,16 @@
 //
 
 #import "BoxOfficeViewController.h"
+#import "DetailCategoryBoxOfficeUITableView.h"
 
 #import "IMTAPI.h"
-#import "EColumnChart.h"
 #import "BoxOfficeCell.h"
 #import <MBProgressHUD.h>
 #import "YTKBatchRequest.h"
 #import "BoxOfficeRequest.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
+#import "EColumnChart.h"
 #import "EFloatBox.h"
 #import "EColor.h"
 
@@ -23,9 +24,9 @@
 static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 
 @interface BoxOfficeViewController () <EColumnChartDelegate, EColumnChartDataSource>
-
 {
     NSArray *keys;
+    NSArray *typesArr;
 }
 
 @property(nonatomic, strong) NSMutableDictionary *BoxOfficeDic;
@@ -33,7 +34,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
 @property (nonatomic, assign) BOOL needAutoRefresh;
 @property (nonatomic, strong) NSDate *lastRefreshTime;
-@property (nonatomic, copy) NSString *kLastRefreshTime;
+@property (nonatomic, copy)   NSString *kLastRefreshTime;
 
 @property (nonatomic, strong) EColumnChart *eColumnChart;
 @property (nonatomic, strong) EColumn *eColumnSelected;
@@ -67,7 +68,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 - (void)initData
 {
     self.BoxOfficeDic = [NSMutableDictionary dictionaryWithCapacity:6];
-    keys = @[ @"hour", @"day", @"weekend", @"month" ,@"global"];
+    keys = @[@"hour", @"day", @"weekend", @"month" ,@"global"];
     
 }
 
@@ -81,7 +82,8 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     [_eColumnChart setDelegate:self];
     [_eColumnChart setDataSource:self];
     
-    _valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - 50, 3, 100, 30)];
+    _valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame) / 2 - 50, 3, 150, 30)];
+    _valueLabel.font = [UIFont systemFontOfSize:12];
     [_valueLabel setTextColor:[UIColor blackColor]];
     
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 230)];
@@ -125,7 +127,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     for (int i = 0; i < [arr count]; i++)
     {
         EColumnDataModel *eColumnDataModel = [[EColumnDataModel alloc] initWithLabel:[arr[i] objectForKey:@"MovieName"]
-                                                                               value:[[arr[i] objectForKey:@"sumBoxOffice"] integerValue]
+                                                                               value:[[arr[i] objectForKey:@"BoxOffice"] integerValue]
                                                                                index:i
                                                                                 unit:@"元"];
         [temp addObject:eColumnDataModel];
@@ -144,7 +146,6 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BoxOfficeCell *cell = [tableView dequeueReusableCellWithIdentifier:kBoxOfficeCellID forIndexPath:indexPath];
-    
     cell.backgroundColor = [UIColor whiteColor];
     
     NSArray      *eleArr    = nil;
@@ -225,18 +226,6 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    /*
-    OSCNews *news = self.objects[indexPath.row];
-    
-    self.label.font = [UIFont boldSystemFontOfSize:15];
-    [self.label setAttributedText:news.attributedTittle];
-    CGFloat height = [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
-    
-    self.label.text = news.body;
-    self.label.font = [UIFont systemFontOfSize:13];
-    height += [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
-    */
     if (indexPath.row == 0) {
         return 180;
     }
@@ -248,19 +237,25 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DetailCategoryBoxOfficeUITableView *dcbouit = [[DetailCategoryBoxOfficeUITableView alloc] init];
     
-    /*
-    OSCNews *news = self.objects[indexPath.row];
-    if (news.eventURL.absoluteString.length > 0) {
-        ActivityDetailsWithBarViewController *activityBVC = [[ActivityDetailsWithBarViewController alloc] initWithActivityID:[news.attachment longLongValue]];
-        [self.navigationController pushViewController:activityBVC animated:YES];
-    } else if (news.url.absoluteString.length > 0) {
-        [self.navigationController handleURL:news.url];
-    } else {
-        DetailsViewController *detailsViewController = [[DetailsViewController alloc] initWithNews:news];
-        [self.navigationController pushViewController:detailsViewController animated:YES];
+    if (indexPath.row == 0) {
+        dcbouit.type = BoxOfficeTypeHour;
+        dcbouit.para = NULL;
+    } else if(indexPath.row == 1) {
+        dcbouit.type = BoxOfficeTypeDay;
+        dcbouit.para = @{@"num":@"0"};
+    } else if(indexPath.row == 2) {
+        dcbouit.type = BoxOfficeTypeWeekend;
+        dcbouit.para = NULL;
+    } else if(indexPath.row == 3) {
+        dcbouit.type = BoxOfficeTypeMonth;
+        dcbouit.para = @{@"sdate":@"2016-1-11"};
+    } else if(indexPath.row == 4) {
+        dcbouit.type = BoxOfficeTypeGlobal;
+        dcbouit.para = @{@"weekId":@"3500"};
     }
-     */
+    [self.navigationController pushViewController:dcbouit animated:YES];
 }
 
 
@@ -310,8 +305,6 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 /** When finger single taped the column*/
 - (void) eColumnChart:(EColumnChart *) eColumnChart didSelectColumn:(EColumn *) eColumn
 {
-    NSLog(@"Index: %ld  Value: %f", (long)eColumn.eColumnDataModel.index, eColumn.eColumnDataModel.value);
-    
     if (_eColumnSelected)
     {
         _eColumnSelected.barColor = _tempColor;
@@ -320,7 +313,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     _tempColor = eColumn.barColor;
     eColumn.barColor = [UIColor blackColor];
     
-    _valueLabel.text = [NSString stringWithFormat:@"%.1f",eColumn.eColumnDataModel.value];
+    _valueLabel.text = [NSString stringWithFormat:@"%@ %.1f", eColumn.eColumnDataModel.label,eColumn.eColumnDataModel.value];
 }
 
 /** When finger enter specific column, this is dif from tap*/
