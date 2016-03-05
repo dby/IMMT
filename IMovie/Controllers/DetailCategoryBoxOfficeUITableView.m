@@ -68,7 +68,6 @@ static NSString *kDetailCategoryBoxOfficeCellID = @"DetailCategoryBoxOfficeCellI
     [cell.titleLabel setText: @""];
     
     @try {
-        
         if ( _type == BoxOfficeTypeHour) {
             
             _eleArr = [[_data objectForKey:@"data"] objectForKey:@"data2"];

@@ -8,6 +8,10 @@
 
 #import "OSCObjsViewController.h"
 
+#import "IMTAPI.h"
+#import "MovieRequest.h"
+#import "BoxOfficeCell.h"
+
 @interface IALLMoviesViewController : OSCObjsViewController
 
 @end
