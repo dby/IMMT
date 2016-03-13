@@ -35,7 +35,6 @@ static NSString *kDetailCategoryBoxOfficeCellID = @"DetailCategoryBoxOfficeCellI
 
 -(void)viewDidLoad
 {
-    
     [self.tableView registerClass:[DetailCategoryBOTableViewCell class] forCellReuseIdentifier:kDetailCategoryBoxOfficeCellID];
     [self fetchObjects];
 }

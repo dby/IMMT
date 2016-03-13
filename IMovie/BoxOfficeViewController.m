@@ -29,6 +29,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     NSArray *typesArr;
 }
 
+@property (nonatomic, strong) BoxOfficeCell *propertyCell;
 @property(nonatomic, strong) NSMutableDictionary *BoxOfficeDic;
 
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
@@ -146,6 +147,7 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BoxOfficeCell *cell = [tableView dequeueReusableCellWithIdentifier:kBoxOfficeCellID forIndexPath:indexPath];
+    self.propertyCell = cell;
     cell.backgroundColor = [UIColor whiteColor];
     
     NSArray      *eleArr    = nil;
@@ -224,16 +226,6 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     return 5;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        return 180;
-    }
-    else {
-        return 150;
-    }
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -258,6 +250,22 @@ static NSString *kBoxOfficeCellID = @"BoxOfficeCellID";
     [self.navigationController pushViewController:dcbouit animated:YES];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGSize size = CGSizeMake(0, 0);
+    @try {
+        BoxOfficeCell *cell = (BoxOfficeCell *)self.propertyCell;
+        size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        NSLog(@"h=%f", size.height + 1);
+    }
+    @catch (NSException *exception) {
+    }
+    @finally {
+        
+    }
+    
+    return 10  + size.height;
+}
 
 #pragma mark - EColumnChartDataSource
 /** How many Columns are there in total.*/

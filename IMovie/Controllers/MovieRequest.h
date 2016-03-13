@@ -9,10 +9,11 @@
 #import <YTKNetwork/YTKRequest.h>
 
 typedef NS_ENUM(NSUInteger, MovieRequestType) {
-    MovieRequestTypeOnShowing     = 1,
-    MovieRequestTypeToShow        = 2,
-    MovieRequestTypeBestReview    = 3,
-    MovieRequestTypeLatestReview  = 4,
+    MovieRequestTypeOnShowing           = 1,
+    MovieRequestTypeToShow              = 2,
+    MovieRequestTypeNewMovieRankingList = 3,
+    MovieRequestTypeBestReview          = 4,
+    MovieRequestTypeLatestReview        = 5,
 };
 
 @interface MovieRequest : YTKRequest

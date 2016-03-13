@@ -12,6 +12,6 @@
 #import "MovieRequest.h"
 #import "BoxOfficeCell.h"
 
-@interface IALLMoviesViewController : OSCObjsViewController
+@interface IALLMoviesViewController : UITableViewController
 
 @end

@@ -101,30 +101,61 @@
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_imageLeft(_imageCenter)]-10-[_imageCenter(_imageRight)]-10-[_imageRight]-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_imageLeft(_imageCenter)]-[_imageCenter(_imageRight)]-[_imageRight]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_nameLeftLabel(_nameCenterLabel)]-10-[_nameCenterLabel(_nameRightLabel)]-10-[_nameRightLabel]-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_nameLeftLabel(_nameCenterLabel)]-[_nameCenterLabel(_nameRightLabel)]-[_nameRightLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_boxOfficeLeftLabel(_boxOfficeCenterLabel)]-10-[_boxOfficeCenterLabel(_boxOfficeRightLabel)]-10-[_boxOfficeRightLabel]-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_boxOfficeLeftLabel(_boxOfficeCenterLabel)]-[_boxOfficeCenterLabel(_boxOfficeRightLabel)]-[_boxOfficeRightLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageLeft(100)]-5-[_nameLeftLabel]-5-[_boxOfficeLeftLabel]-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageLeft]-5-[_nameLeftLabel]-5-[_boxOfficeLeftLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageCenter(100)]-5-[_nameCenterLabel]-5-[_boxOfficeCenterLabel]-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageCenter]-5-[_nameCenterLabel]-5-[_boxOfficeCenterLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageRight(100)]-5-[_nameRightLabel]-5-[_boxOfficeRightLabel]-|"
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-3-[_titleLabel]-5-[_imageRight]-5-[_nameRightLabel]-5-[_boxOfficeRightLabel]-|"
                                                                              options:0
                                                                              metrics:nil views:viewsDict]];
     
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_imageRight
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:_imageRight
+                                                                 attribute:NSLayoutAttributeWidth
+                                                                multiplier:1.3
+                                                                  constant:0]];
+    
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_imageCenter
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:_imageCenter
+                                                                 attribute:NSLayoutAttributeWidth
+                                                                multiplier:1.3
+                                                                  constant:0]];
+    
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_imageLeft
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:_imageLeft
+                                                                 attribute:NSLayoutAttributeWidth
+                                                                multiplier:1.3
+                                                                  constant:0]];
+    
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_imageCenter
+                                                                 attribute:NSLayoutAttributeCenterX
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.contentView
+                                                                 attribute:NSLayoutAttributeCenterX
+                                                                multiplier:1.0f
+                                                                  constant:0.0f]];
 }
 
 @end

@@ -58,6 +58,9 @@
         case MovieRequestTypeOnShowing:
             url = @"/onshowingfilms/";
             break;
+        case MovieRequestTypeNewMovieRankingList:
+            url = @"/rankinglist/";
+            break;
         case MovieRequestTypeToShow:
             break;
         case MovieRequestTypeBestReview:

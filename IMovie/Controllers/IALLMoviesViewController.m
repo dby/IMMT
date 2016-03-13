@@ -9,9 +9,15 @@
 #import "IALLMoviesViewController.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
+#import "BoxOfficeRequest.h"
+#import "YTKBatchRequest.h"
+
+#import "PraiseTableViewController.h"
+
 @interface IALLMoviesViewController ()
 
-@property (nonatomic, strong) NSArray* data;
+@property (nonatomic, strong) NSMutableArray* data;
+@property (nonatomic, strong) BoxOfficeCell *propertyCell;
 
 @end
 
@@ -23,24 +29,41 @@ static NSString *kMovieCellID = @"MovieCellID";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initComponents];
     [self.tableView registerClass:[BoxOfficeCell class] forCellReuseIdentifier:kMovieCellID];
     [self fetchObjects];
 }
 
+#pragma mark - Init
+
+- (void)initComponents
+{
+    _data = [[NSMutableArray alloc] init];
+}
 
 #pragma mark - Function
 
 -(void)fetchObjects
 {
-    MovieRequest *bor = [[MovieRequest alloc] initWithType:MovieRequestTypeOnShowing withPara:NULL];
-    [bor startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
-        NSLog(@"succeed");
+    MovieRequest *onShowingMoviesRequest = [[MovieRequest alloc] initWithType:MovieRequestTypeOnShowing withPara:NULL];
+    MovieRequest *NewMovieRankRequest = [[MovieRequest alloc]initWithType:MovieRequestTypeNewMovieRankingList withPara:NULL];
+    
+    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[onShowingMoviesRequest, NewMovieRankRequest]];
+    [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest *batchRequest) {
         
-        _data = [request.responseJSONObject objectForKey:@"data"];
+        
+        for (int i = 0; i < batchRequest.requestArray.count; i++) {
+            YTKBaseRequest *ytkb    = (YTKBaseRequest *)(batchRequest.requestArray[i]);
+            NSLog(@"success: %@", ytkb.responseJSONObject);
+            
+            _data[i] = [ytkb.responseJSONObject objectForKey:@"data"];
+        }
+        
         [self.tableView reloadData];
         
-    } failure:^(YTKBaseRequest *request) {
+    } failure:^(YTKBatchRequest *batchRequest) {
         NSLog(@"failed");
+        [self fetchObjects];
     }];
 }
 
@@ -49,25 +72,39 @@ static NSString *kMovieCellID = @"MovieCellID";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BoxOfficeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMovieCellID forIndexPath:indexPath];
+    
+    self.propertyCell = cell;
+    
     cell.backgroundColor = [UIColor whiteColor];
     
-    [cell.titleLabel setText: @""];
-    
     @try {
+        if (indexPath.row == 0) {
+            [cell.titleLabel setText: @"热映的"];
+        } else if(indexPath.row == 1) {
+            [cell.titleLabel setText: @"口碑榜"];
+        }
         
-        [cell.nameLeftLabel setText:_data[0][@"title"]];
-        [cell.nameCenterLabel setText:_data[1][@"title"]];
-        [cell.nameRightLabel setText:_data[2][@"title"]];
+        NSArray *tmp = [_data objectAtIndex:indexPath.row];
         
-        [cell.boxOfficeLeftLabel setText:_data[0][@"rate"]];
-        [cell.boxOfficeCenterLabel setText:_data[1][@"rate"]];
-        [cell.boxOfficeRightLabel setText:_data[2][@"rate"]];
+        [cell.nameLeftLabel setText:tmp[0][@"title"]];
+        [cell.nameCenterLabel setText:tmp[1][@"title"]];
+        [cell.nameRightLabel setText:tmp[2][@"title"]];
         
-        [cell.imageLeft setImageWithURL:[NSURL URLWithString:_data[0][@"cover"]] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.boxOfficeLeftLabel setText:tmp[0][@"rate"]];
+        [cell.boxOfficeCenterLabel setText:tmp[1][@"rate"]];
+        [cell.boxOfficeRightLabel setText:tmp[2][@"rate"]];
         
-        [cell.imageCenter setImageWithURL:[NSURL URLWithString:_data[1][@"cover"]] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.imageLeft setImageWithURL:[NSURL URLWithString:tmp[0][@"cover"]]
+                       placeholderImage:nil
+            usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         
-        [cell.imageRight setImageWithURL:[NSURL URLWithString:_data[2][@"cover"]] placeholderImage:nil usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        [cell.imageCenter setImageWithURL:[NSURL URLWithString:tmp[1][@"cover"]]
+                         placeholderImage:nil
+              usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        
+        [cell.imageRight setImageWithURL:[NSURL URLWithString:tmp[2][@"cover"]]
+                        placeholderImage:nil
+             usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         
     }
     @catch (NSException *exception) {
@@ -87,12 +124,30 @@ static NSString *kMovieCellID = @"MovieCellID";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_data count];
+    return 2;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 150;
+    CGSize size = CGSizeMake(0, 0);
+    @try {
+        BoxOfficeCell *cell = (BoxOfficeCell *)self.propertyCell;
+        size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+        NSLog(@"h=%f", size.height + 1);
+    }
+    @catch (NSException *exception) {
+    }
+    @finally {
+        
+    }
+    return 10  + size.height;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PraiseTableViewController *ptvc = [[PraiseTableViewController alloc] init];
+    ptvc.url = @"";
+    [self.navigationController pushViewController:ptvc animated:YES];
 }
 
 @end

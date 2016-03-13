@@ -52,7 +52,7 @@
     SwipableViewController *movieSVC = [[SwipableViewController alloc] initWithTitle:@"电影"
                                                                        andSubTitles:@[
                                                                                       @"票房",
-                                                                                      @"排片",
+                                                                                      @"影评",
                                                                                       @"电影",
                                                                                       @"搜索"
                                                                                       ]
