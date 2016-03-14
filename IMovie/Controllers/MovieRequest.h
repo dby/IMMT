@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, MovieRequestType) {
     MovieRequestTypeNewMovieRankingList = 3,
     MovieRequestTypeBestReview          = 4,
     MovieRequestTypeLatestReview        = 5,
+    MovieRequestTypeDetailMovieInfo     = 6,
 };
 
 @interface MovieRequest : YTKRequest

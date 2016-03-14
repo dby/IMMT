@@ -12,6 +12,8 @@
 #import "PraiseTableViewCell.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
+#import "DetailMITableViewController.h"
+
 @interface PraiseTableViewController ()
 
 @property (nonatomic, strong) NSArray *data;
@@ -132,5 +134,19 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         cell.layoutMargins = UIEdgeInsetsZero;
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *movieID = @"";
+    NSString *searchText = [[_data objectAtIndex: (indexPath.row / 2)] objectForKey:@"href"];
+    NSRange range = [searchText rangeOfString:@"[0-9]{8,}" options:NSRegularExpressionSearch];
+    if (range.location != NSNotFound) {
+        movieID = [searchText substringWithRange:range];
+    }
+    DetailMITableViewController *dmt = [[DetailMITableViewController alloc] init];
+    dmt.movieID = movieID;
+    [self.navigationController pushViewController:dmt animated:YES];
+    
 }
 @end

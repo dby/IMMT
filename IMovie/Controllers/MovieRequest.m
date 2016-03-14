@@ -25,6 +25,7 @@
     self = [super init];
     if (self) {
         self.requestType = type;
+        self.para = para;
         
         switch (self.requestType) {
             case MovieRequestTypeOnShowing:
@@ -67,6 +68,9 @@
             break;
         case MovieRequestTypeLatestReview:
             break;
+        case MovieRequestTypeDetailMovieInfo:
+            url = @"/film/";
+            break;
             
         default:
             url = @"";
@@ -95,6 +99,11 @@
             break;
             
         case MovieRequestTypeLatestReview:
+            
+            break;
+        case MovieRequestTypeDetailMovieInfo:
+            
+            return self.para;
             
             break;
             
