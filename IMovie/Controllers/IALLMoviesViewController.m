@@ -54,7 +54,7 @@ static NSString *kMovieCellID = @"MovieCellID";
         
         for (int i = 0; i < batchRequest.requestArray.count; i++) {
             YTKBaseRequest *ytkb    = (YTKBaseRequest *)(batchRequest.requestArray[i]);
-            NSLog(@"success: %@", ytkb.responseJSONObject);
+            NSLog(@"success11: %@", ytkb.responseJSONObject);
             
             _data[i] = [ytkb.responseJSONObject objectForKey:@"data"];
         }

@@ -26,26 +26,6 @@
     if (self) {
         self.requestType = type;
         self.para = para;
-        
-        switch (self.requestType) {
-            case MovieRequestTypeOnShowing:
-                
-                break;
-                
-            case MovieRequestTypeToShow:
-                break;
-                
-            case MovieRequestTypeBestReview:
-                
-                break;
-                
-            case MovieRequestTypeLatestReview:
-                
-                break;
-                
-            default:
-                break;
-        }
     }
     
     return self;
@@ -65,8 +45,13 @@
         case MovieRequestTypeToShow:
             break;
         case MovieRequestTypeBestReview:
+            url = @"/review/";
             break;
         case MovieRequestTypeLatestReview:
+            url = @"/review/";
+            break;
+        case MovieRequestTypeEssays:
+            url = @"/essay/";
             break;
         case MovieRequestTypeDetailMovieInfo:
             url = @"/film/";
@@ -95,16 +80,18 @@
             break;
             
         case MovieRequestTypeBestReview:
-            
+            return self.para;
             break;
             
         case MovieRequestTypeLatestReview:
-            
             break;
+        
         case MovieRequestTypeDetailMovieInfo:
-            
             return self.para;
+            break;
             
+        case MovieRequestTypeEssays:
+            return self.para;
             break;
             
         default:

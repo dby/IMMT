@@ -45,7 +45,7 @@
     MovieRequest *mr = [[MovieRequest alloc] initWithType:MovieRequestTypeNewMovieRankingList withPara:NULL];
     [mr startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
         NSLog(@"succeed");
-        NSLog(@"data: %@", request.responseJSONObject);
+        //NSLog(@"data: %@", request.responseJSONObject);
         _data = [request.responseJSONObject objectForKey:@"data"];
         [self.tableView reloadData];
         
@@ -140,10 +140,11 @@
 {
     NSString *movieID = @"";
     NSString *searchText = [[_data objectAtIndex: (indexPath.row / 2)] objectForKey:@"href"];
-    NSRange range = [searchText rangeOfString:@"[0-9]{8,}" options:NSRegularExpressionSearch];
+    NSRange range = [searchText rangeOfString:@"[0-9]{5,}" options:NSRegularExpressionSearch];
     if (range.location != NSNotFound) {
         movieID = [searchText substringWithRange:range];
     }
+    NSLog(@"movieId: %@", movieID);
     DetailMITableViewController *dmt = [[DetailMITableViewController alloc] init];
     dmt.movieID = movieID;
     [self.navigationController pushViewController:dmt animated:YES];
