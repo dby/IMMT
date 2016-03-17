@@ -11,6 +11,7 @@
 #import "MovieRequest.h"
 #import "DetailMITableViewCell.h"
 #import "PhotosTableViewCell.h"
+#import "EssayTableViewCell.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 #import "YTKBatchRequest.h"
@@ -46,11 +47,18 @@
     MovieRequest *mr = [[MovieRequest alloc] initWithType:MovieRequestTypeDetailMovieInfo
                                                  withPara:@{@"id": _movieID}];
     MovieRequest *reviews = [[MovieRequest alloc] initWithType:MovieRequestTypeBestReview
-                                                     withPara:@{@"id": _movieID, @"start": @0,
-                                                                @"limit": @10, @"sort":@"",@"score":@""}];
+                                                     withPara:@{@"id": _movieID,
+                                                                @"start": @0,
+                                                                @"limit": @3,
+                                                                @"sort":@"",
+                                                                @"score":@""
+                                                                }];
     MovieRequest *essays = [[MovieRequest alloc] initWithType:MovieRequestTypeEssays
-                                                     withPara:@{@"id": _movieID, @"start": @0,
-                                                                @"limit": @10, @"sort":@"time"}];
+                                                     withPara:@{@"id": _movieID,
+                                                                @"start": @0,
+                                                                @"limit": @6,
+                                                                @"sort":@"time"
+                                                                }];
     
     
     YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[mr, reviews, essays]];
@@ -95,7 +103,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -126,6 +134,8 @@
         }
         return cell;
         
+        return nil;
+        
     }
     else if (indexPath.row == 1) {
         // Movie 海报
@@ -136,6 +146,7 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"PhotosTableViewCell" owner:self options:nil] lastObject];
         }
         @try {
+            
             CGFloat x = 0;
             CGRect frame = CGRectMake(0, 0, 150, 150);
             NSInteger num = [[[_data objectAtIndex:0] objectForKey:@"covers"] count] > PhotoNum ? PhotoNum : [[[_data objectAtIndex:0] objectForKey:@"covers"] count];
@@ -156,6 +167,7 @@
             cell.photoscrollview.contentSize = CGSizeMake(150 * num, 0);
         }
         @catch (NSException *exception) {
+            
         }
         @finally {
         }
@@ -164,8 +176,31 @@
     }
     else if (indexPath.row == 2) {
         // 短评
+        EssayTableViewCell *cell = (EssayTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"essaycell"];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"EssayTableViewCell" owner:self options:nil] lastObject];
+        }
+        self.propertyCell = cell;
+        @try {
+            
+            NSDictionary *tmp = [[[_data objectAtIndex:2] objectAtIndex:indexPath.row] copy];
+            
+            [cell.img setImageWithURL:[NSURL URLWithString:[tmp objectForKey:@"author_img"]] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [cell.author setText:[tmp objectForKey:@"author_name"]];
+            [cell.content setText:[tmp objectForKey:@"essay_content"]];
+            [cell.time setText:[tmp objectForKey:@"essay_time"]];
+            [cell.vote setText:[tmp objectForKey:@"essay_vote"]];
+        }
         
-        return nil;
+        @catch (NSException *exception) {
+            
+            NSLog(@"index.row == 2, %@", exception.description);
+        }
+        @finally {
+            
+        }
+        
+        return cell;
         
     } else {
         // 影评
