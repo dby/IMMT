@@ -17,7 +17,8 @@
     _director_release.font = [UIFont systemFontOfSize:12];
     
     _intro.font = [UIFont systemFontOfSize:12];
-    _intro.numberOfLines = 5;
+    _intro.lineBreakMode = NSLineBreakByWordWrapping;
+    _intro.numberOfLines = 0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

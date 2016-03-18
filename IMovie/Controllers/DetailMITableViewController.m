@@ -12,6 +12,7 @@
 #import "DetailMITableViewCell.h"
 #import "PhotosTableViewCell.h"
 #import "EssayTableViewCell.h"
+#import "ReviewTableViewCell.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 #import "YTKBatchRequest.h"
@@ -103,7 +104,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -139,12 +140,11 @@
     }
     else if (indexPath.row == 1) {
         // Movie 海报
-        
         PhotosTableViewCell *cell = (PhotosTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"photocell"];
-        self.propertyCell = cell;
         if (cell == nil) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"PhotosTableViewCell" owner:self options:nil] lastObject];
         }
+        self.propertyCell = cell;
         @try {
             
             CGFloat x = 0;
@@ -174,7 +174,7 @@
         
         return cell;
     }
-    else if (indexPath.row == 2) {
+    else if (indexPath.row >= 2 && indexPath.row <= 6) {
         // 短评
         EssayTableViewCell *cell = (EssayTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"essaycell"];
         if (cell == nil) {
@@ -183,7 +183,7 @@
         self.propertyCell = cell;
         @try {
             
-            NSDictionary *tmp = [[[_data objectAtIndex:2] objectAtIndex:indexPath.row] copy];
+            NSDictionary *tmp = [[[_data objectAtIndex:2] objectAtIndex:indexPath.row - 1] copy];
             
             [cell.img setImageWithURL:[NSURL URLWithString:[tmp objectForKey:@"author_img"]] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
             [cell.author setText:[tmp objectForKey:@"author_name"]];
@@ -202,16 +202,38 @@
         
         return cell;
         
-    } else {
+    } else if (indexPath.row >= 7 && indexPath.row <= 9)  {
         // 影评
+        ReviewTableViewCell *cell = (ReviewTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"reviewcell"];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"ReviewTableViewCell" owner:self options:nil] lastObject];
+        }
+        self.propertyCell = cell;
+        @try {
+            
+            NSDictionary *tmp = [[[_data objectAtIndex:1] objectAtIndex:indexPath.row - 7] copy];
+            
+            [cell.portrait setImageWithURL:[NSURL URLWithString:[tmp objectForKey:@"author_img"]] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [cell.author setText:[tmp objectForKey:@"author_name"]];
+            [cell.content setText:[tmp objectForKey:@"review_content"]];
+            [cell.title setText:[tmp objectForKey:@"review_title"]];
+        }
         
-        return nil;
+        @catch (NSException *exception) {
+            
+            NSLog(@"index.row == 2, %@", exception.description);
+        }
+        @finally {
+            
+        }
+        
+        return cell;
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180;
+    return [self tableView:self.tableView estimatedHeightForRowAtIndexPath:indexPath];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -227,7 +249,7 @@
     }
     
     if (indexPath.row == 1) {
-        return 200;
+        return 180;
     } else {
         return 10  + size.height;
     }

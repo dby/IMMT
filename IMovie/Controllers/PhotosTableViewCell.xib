@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photocell" rowHeight="62" id="KGk-i7-Jjw" customClass="PhotosTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photocell" rowHeight="168" id="KGk-i7-Jjw" customClass="PhotosTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="165.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMi-EL-fdc">
-                        <rect key="frame" x="8" y="8" width="304" height="43.5"/>
+                        <rect key="frame" x="8" y="8" width="304" height="150"/>
                     </scrollView>
                 </subviews>
                 <constraints>
@@ -28,7 +28,7 @@
             <connections>
                 <outlet property="photoscrollview" destination="nMi-EL-fdc" id="4EG-8A-fGH"/>
             </connections>
-            <point key="canvasLocation" x="-39" y="299"/>
+            <point key="canvasLocation" x="-39" y="352"/>
         </tableViewCell>
     </objects>
 </document>

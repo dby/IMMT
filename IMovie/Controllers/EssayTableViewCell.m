@@ -13,9 +13,14 @@
 - (void)awakeFromNib {
     // Initialization code
     _content.font = [UIFont systemFontOfSize:12];
-    _content.numberOfLines = 5;
+    _content.lineBreakMode = NSLineBreakByWordWrapping;
+    _content.numberOfLines = 0;
     
-    _img.layer.cornerRadius = _img.image.size.width / 2;
+    _vote.font = [UIFont systemFontOfSize:12];
+    _time.font = [UIFont systemFontOfSize:12];
+    
+    _img.layer.masksToBounds = YES;
+    _img.layer.cornerRadius = 20;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
