@@ -15,12 +15,15 @@
 #import "ReviewTableViewCell.h"
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
+#import "MWPhotoBrowser.h"
+
 #import "YTKBatchRequest.h"
 
 @interface DetailMITableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *data;
 @property (nonatomic, strong) UITableViewCell *propertyCell;
+@property (nonatomic, strong) NSMutableArray *photos;
 
 @end
 
@@ -38,6 +41,7 @@
 - (void)initComponents
 {
     self.data = [[NSMutableArray alloc] init];
+    self.photos = [[NSMutableArray alloc] init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -125,7 +129,6 @@
             [cell.intro setText:[[_data objectAtIndex:0] objectForKey:@"intro"]];
             
             [cell.director_release setText:[[_data objectAtIndex:0] objectForKey:@"director"]];
-        
             [self AddHeaderView:[NSURL URLWithString:[[_data objectAtIndex:0] objectForKey:@"cover"]]];
         }
         @catch (NSException *exception) {
@@ -158,9 +161,8 @@
                 imageView.clipsToBounds = YES;
                 imageView.tag = i;
                 imageView.userInteractionEnabled = YES;
-                NSLog(@"url: %@", [[[_data objectAtIndex:0] objectForKey:@"covers"] objectAtIndex:i]);
                 [imageView setImageWithURL:[NSURL URLWithString:[[[_data objectAtIndex:0] objectForKey:@"covers"] objectAtIndex:i]] usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-                //[imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBig:)]];
+                [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showBig:)]];
                 [cell.photoscrollview addSubview:imageView];
                 x += (frame.size.width+5);
             }
@@ -171,7 +173,6 @@
         }
         @finally {
         }
-        
         return cell;
     }
     else if (indexPath.row >= 2 && indexPath.row <= 6) {
@@ -255,4 +256,34 @@
     }
 }
 
+#pragma mark Function
+- (void)showBig:(UITapGestureRecognizer *)sender {
+    
+    //UIImage *img = ((UIImageView *)sender.view).image;
+    //MWPhoto *photo = [MWPhoto photoWithImage:img];
+    
+    @try {
+        NSMutableArray *photoArray = [[NSMutableArray alloc] init];
+        NSArray *tmp = [[[_data objectAtIndex:0] objectForKey:@"covers"] copy];
+        for (NSString *url in tmp) {
+            MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:url]];
+            //photo.caption = [meizi objectForKey:@"title"];
+            [photoArray addObject:photo];
+        }
+        
+        MWPhotoBrowser * browser = [[MWPhotoBrowser alloc] initWithPhotos:photoArray];
+        browser.alwaysShowControls = YES;
+        browser.zoomPhotosToFill = YES;
+        [browser showPreviousPhotoAnimated:YES];
+        [browser showNextPhotoAnimated:YES];
+        [browser setCurrentPhotoIndex:sender.view.tag];
+        [self.navigationController pushViewController:browser animated:YES];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        
+    }
+}
 @end
